@@ -12,7 +12,9 @@ func NotFound(w http.ResponseWriter, r *http.Request) {
 		"owner": "mpermperpisang",
 		"command": [
 			{
+				"GET": "/example",
 				"GET": "/biodata",
+				"GET": "/biodata/{id}",
 			}
 		]
 	}`))

@@ -1,6 +1,7 @@
 package data
 
-type data struct {
+/*Field : field biodata*/
+type Field struct {
 	ID          string `json:"ID"`
 	Name        string `json:"Name"`
 	Job         string `json:"Job"`
@@ -8,7 +9,7 @@ type data struct {
 	Motto       string `json:"Motto"`
 }
 
-type biodata []data
+type biodata []Field
 
 /*Datas : biodata content*/
 var Datas = biodata{
