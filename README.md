@@ -7,7 +7,7 @@ Trying API with Golang
 `$ make package`
 
 **Running**<br/>
-`go build /example/main.go`
+`go build main.go`
 
 **Contact**<br/>
 `mpermperpisang@gmail.com`
@@ -15,3 +15,4 @@ Trying API with Golang
 **Reference**<br/>
 - https://github.com/TutorialEdge/create-rest-api-in-go-tutorial/blob/master/main.go
 - https://dev.to/moficodes/build-your-first-rest-api-with-go-2gcj
+- https://medium.com/the-andela-way/build-a-restful-json-api-with-golang-85a83420c9da
