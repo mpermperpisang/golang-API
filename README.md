@@ -7,7 +7,7 @@ Trying API with Golang
 `$ make package`
 
 **Running**<br/>
-`go build main.go`
+`$ make run`
 
 **Contact**<br/>
 `mpermperpisang@gmail.com`

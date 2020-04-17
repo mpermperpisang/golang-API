@@ -2,7 +2,6 @@ all: kill-port run
 
 package:
 	@go get -u github.com/gorilla/mux
-	@go get -u github.com/nwidger/jsoncolor
 	@echo "Package installed"
 
 kill-port:

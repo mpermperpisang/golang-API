@@ -2,7 +2,6 @@ package biodata
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 
@@ -18,16 +17,14 @@ func AddOneBiodata(w http.ResponseWriter, r *http.Request) {
 	helper.LogPanicln(err)
 
 	if len(reqBody) > 0 {
-		if err := json.Unmarshal(reqBody, &newBio); err != nil {
-			helper.LogPanicln(err)
-		}
+		err := json.Unmarshal(reqBody, &newBio)
+		helper.LogPanicln(err)
 
 		data.Datas = append(data.Datas, newBio)
 
 		w.WriteHeader(http.StatusCreated)
 		helper.PrettyJSON(w, newBio)
 	} else {
-		w.WriteHeader(http.StatusBadRequest)
-		fmt.Fprintf(w, "Request body cannot be empty")
+		helper.WriteStatusBodyText(w, http.StatusBadRequest, "Request body cannot be empty")
 	}
 }

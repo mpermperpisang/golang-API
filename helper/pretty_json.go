@@ -13,7 +13,7 @@ const (
 )
 
 /*PrettyJSON : tidy json*/
-func PrettyJSON(w http.ResponseWriter, response interface{}) *json.Encoder {
+func PrettyJSON(w http.ResponseWriter, response interface{}) error {
 	encoder := json.NewEncoder(w)
 
 	encoder.SetIndent(empty, tab)
@@ -21,5 +21,5 @@ func PrettyJSON(w http.ResponseWriter, response interface{}) *json.Encoder {
 	err := encoder.Encode(response)
 	helper.LogPanicln(err)
 
-	return encoder
+	return nil
 }

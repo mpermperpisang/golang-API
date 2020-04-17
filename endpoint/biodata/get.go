@@ -1,7 +1,6 @@
 package biodata
 
 import (
-	"fmt"
 	"net/http"
 
 	"github.com/golang-API/data"
@@ -22,8 +21,7 @@ func GetOneBiodata(w http.ResponseWriter, r *http.Request) {
 		if singleBio.ID == bioID {
 			helper.PrettyJSON(w, singleBio)
 		} else {
-			w.WriteHeader(http.StatusNotFound)
-			fmt.Fprintf(w, "ID Not Found!")
+			helper.WriteStatusBodyText(w, http.StatusNotFound, "ID Not Found!")
 		}
 	}
 }
