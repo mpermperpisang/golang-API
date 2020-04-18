@@ -13,8 +13,6 @@ func UpdateOneBiodata(w http.ResponseWriter, r *http.Request) {
 	varID(r)
 	readBody(r)
 
-	responseBody = nil
-
 	if len(reqBody) > 0 {
 		unmarshallBody(reqBody, &bioField)
 
@@ -29,10 +27,10 @@ func UpdateOneBiodata(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 	} else {
-		helper.WriteStatusBodyText(w, http.StatusBadRequest, "Request body cannot be empty")
+		helper.WriteStatusBodyText(w, http.StatusBadRequest, helper.EmptyReqBody())
 	}
 
 	if responseBody == nil {
-		helper.WriteStatusBodyText(w, http.StatusNotFound, "ID Not Found!")
+		helper.WriteStatusBodyText(w, http.StatusNotFound, helper.NotFoundID())
 	}
 }

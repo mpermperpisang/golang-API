@@ -17,8 +17,6 @@ func GetOneBiodata(w http.ResponseWriter, r *http.Request) {
 	varInit()
 	varID(r)
 
-	responseBody = nil
-
 	for _, singleBio := range data.Datas {
 		if singleBio.ID == bioID {
 			responseBody = helper.PrettyJSON(w, singleBio)
@@ -26,6 +24,6 @@ func GetOneBiodata(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if responseBody == nil {
-		helper.WriteStatusBodyText(w, http.StatusNotFound, "ID Not Found!")
+		helper.WriteStatusBodyText(w, http.StatusNotFound, helper.NotFoundID())
 	}
 }

@@ -20,6 +20,6 @@ func DeleteOneBiodata(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if responseBody == nil {
-		helper.WriteStatusBodyText(w, http.StatusNotFound, "ID Not Found!")
+		helper.WriteStatusBodyText(w, http.StatusNotFound, helper.NotFoundID())
 	}
 }

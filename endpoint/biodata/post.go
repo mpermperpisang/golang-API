@@ -19,6 +19,6 @@ func AddOneBiodata(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusCreated)
 		helper.PrettyJSON(w, bioField)
 	} else {
-		helper.WriteStatusBodyText(w, http.StatusBadRequest, "Request body cannot be empty")
+		helper.WriteStatusBodyText(w, http.StatusBadRequest, helper.EmptyReqBody())
 	}
 }
