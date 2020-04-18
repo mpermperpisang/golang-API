@@ -9,7 +9,8 @@ import (
 
 /*UpdateOneBiodata : update biodata user*/
 func UpdateOneBiodata(w http.ResponseWriter, r *http.Request) {
-	varBioID(r)
+	varInit()
+	varID(r)
 	readBody(r)
 
 	responseBody = nil

@@ -15,7 +15,13 @@ var bioID string
 var reqBody []byte
 var bioField data.Field
 
-func varBioID(r *http.Request) error {
+func varInit() error {
+	responseBody = nil
+
+	return nil
+}
+
+func varID(r *http.Request) error {
 	bioID = mux.Vars(r)["id"]
 
 	return nil

@@ -9,9 +9,8 @@ import (
 
 /*DeleteOneBiodata : delete biodata user*/
 func DeleteOneBiodata(w http.ResponseWriter, r *http.Request) {
-	varBioID(r)
-
-	responseBody = nil
+	varInit()
+	varID(r)
 
 	for i, singleBio := range data.Datas {
 		if singleBio.ID == bioID {

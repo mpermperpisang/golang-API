@@ -14,7 +14,8 @@ func GetAllBiodata(w http.ResponseWriter, r *http.Request) {
 
 /*GetOneBiodata : get biodata of specific user*/
 func GetOneBiodata(w http.ResponseWriter, r *http.Request) {
-	varBioID(r)
+	varInit()
+	varID(r)
 
 	responseBody = nil
 
