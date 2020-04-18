@@ -33,6 +33,8 @@ func biodataEndpoint(r *mux.Router) error {
 	r.HandleFunc("/biodata", biodata.GetAllBiodata).Methods(http.MethodGet)
 	r.HandleFunc("/biodata/{id}", biodata.GetOneBiodata).Methods(http.MethodGet)
 	r.HandleFunc("/biodata", biodata.AddOneBiodata).Methods(http.MethodPost)
+	r.HandleFunc("/biodata/{id}", biodata.UpdateOneBiodata).Methods(http.MethodPatch)
+	r.HandleFunc("/biodata/{id}", biodata.DeleteOneBiodata).Methods(http.MethodDelete)
 
 	return nil
 }

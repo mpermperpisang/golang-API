@@ -7,19 +7,15 @@ import (
 	"github.com/golang-API/helper"
 )
 
-/*GetAllBiodata : get biodata user*/
-func GetAllBiodata(w http.ResponseWriter, r *http.Request) {
-	helper.PrettyJSON(w, data.Datas)
-}
-
-/*GetOneBiodata : get biodata of specific user*/
-func GetOneBiodata(w http.ResponseWriter, r *http.Request) {
+/*DeleteOneBiodata : delete biodata user*/
+func DeleteOneBiodata(w http.ResponseWriter, r *http.Request) {
 	varBioID(r)
 
 	responseBody = nil
 
-	for _, singleBio := range data.Datas {
+	for i, singleBio := range data.Datas {
 		if singleBio.ID == bioID {
+			data.Datas = append(data.Datas[:i], data.Datas[i+1:]...)
 			responseBody = helper.PrettyJSON(w, singleBio)
 		}
 	}

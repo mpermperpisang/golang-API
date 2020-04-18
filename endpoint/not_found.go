@@ -16,6 +16,8 @@ func NotFound(w http.ResponseWriter, r *http.Request) {
 				"GET": "/biodata",
 				"GET": "/biodata/{id}",
 				"POST": "/biodata",
+				"PATCH": "/biodata/{id}",
+				"DELETE": "/biodata/{id}",
 			}
 		]
 	}`))
