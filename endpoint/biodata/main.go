@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
+	"strconv"
 
 	"github.com/golang-API/data"
 	"github.com/golang-API/helper"
@@ -11,9 +12,10 @@ import (
 )
 
 var responseBody *json.Encoder
-var bioID string
+var bioID int
 var reqBody []byte
 var bioField data.Field
+var err error
 
 func varInit() error {
 	responseBody = nil
@@ -22,14 +24,13 @@ func varInit() error {
 }
 
 func varID(r *http.Request) error {
-	bioID = mux.Vars(r)["id"]
+	bioID, err = strconv.Atoi(mux.Vars(r)["id"])
+	helper.LogPanicln(err)
 
 	return nil
 }
 
 func readBody(r *http.Request) error {
-	var err error
-
 	reqBody, err = ioutil.ReadAll(r.Body)
 	helper.LogPanicln(err)
 
