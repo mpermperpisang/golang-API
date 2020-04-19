@@ -7,17 +7,15 @@ import (
 	"github.com/golang-API/helper"
 )
 
-/*UpdateOneBiodata : update biodata user*/
-func UpdateOneBiodata(w http.ResponseWriter, r *http.Request) {
+func setPatchResponseBody(w http.ResponseWriter, r *http.Request, ID int) error {
 	varInit()
-	varID(r)
 	readBody(r)
 
 	if len(reqBody) > 0 {
 		unmarshallBody(reqBody, &bioField)
 
 		for i, singleBio := range data.Datas {
-			if singleBio.ID == bioID {
+			if singleBio.ID == ID {
 				singleBio.Name = bioField.Name
 				singleBio.Job = bioField.Job
 				singleBio.Description = bioField.Description
@@ -30,7 +28,19 @@ func UpdateOneBiodata(w http.ResponseWriter, r *http.Request) {
 		helper.WriteStatusBodyText(w, http.StatusBadRequest, helper.EmptyReqBody())
 	}
 
-	if responseBody == nil {
-		helper.WriteStatusBodyText(w, http.StatusNotFound, helper.NotFoundID())
-	}
+	helper.ResponseBodyNotFound(responseBody, w)
+
+	return nil
+}
+
+/*UpdateOneBiodata : update biodata user*/
+func UpdateOneBiodata(w http.ResponseWriter, r *http.Request) {
+	varID(r)
+	setPatchResponseBody(w, r, bioID)
+}
+
+/*UpdateParamOneBiodata : update biodata of spesific user using param ID*/
+func UpdateParamOneBiodata(w http.ResponseWriter, r *http.Request) {
+	varParamBioID(r)
+	setPatchResponseBody(w, r, paramBioID)
 }

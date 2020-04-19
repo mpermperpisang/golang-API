@@ -12,7 +12,7 @@ import (
 )
 
 var responseBody *json.Encoder
-var bioID int
+var bioID, paramBioID int
 var reqBody []byte
 var bioField data.Field
 var err error
@@ -25,6 +25,13 @@ func varInit() error {
 
 func varID(r *http.Request) error {
 	bioID, err = strconv.Atoi(mux.Vars(r)["id"])
+	helper.LogPanicln(err)
+
+	return nil
+}
+
+func varParamBioID(r *http.Request) error {
+	paramBioID, err = strconv.Atoi(r.FormValue("id"))
 	helper.LogPanicln(err)
 
 	return nil
