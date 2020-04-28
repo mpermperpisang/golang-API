@@ -3,8 +3,6 @@ package helper
 import (
 	"encoding/json"
 	"net/http"
-
-	"github.com/golang-automation/features/helper"
 )
 
 const (
@@ -19,7 +17,7 @@ func PrettyJSON(w http.ResponseWriter, response interface{}) *json.Encoder {
 	encoder.SetIndent(empty, tab)
 
 	err := encoder.Encode(response)
-	helper.LogPanicln(err)
+	LogPanicln(err)
 
 	return encoder
 }
