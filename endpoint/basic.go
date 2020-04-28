@@ -16,7 +16,7 @@ func Basic(w http.ResponseWriter, r *http.Request) {
 				"POST": "/post",
 				"PUT": "/put",
 				"PATCH": "/patch",
-				"DELETE": "/delete",
+				"DELETE": "/delete"
 			}
 		]
 	}`))
