@@ -9,6 +9,9 @@ Trying API with Golang
 **Running**<br/>
 `$ make run`
 
+**Server**<br/>
+mpermperpisang.co.id
+
 **Postman Collection**<br/>
 https://www.getpostman.com/collections/68777ad50a805ae2f6c4
 
