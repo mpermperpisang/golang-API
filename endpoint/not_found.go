@@ -10,15 +10,13 @@ func NotFound(w http.ResponseWriter, r *http.Request) {
 	{
 		"message": "not found",
 		"owner": "mpermperpisang",
-		"command": [
-			{
-				"GET": "/example",
-				"GET": "/biodata",
-				"GET": "/biodata/{id}",
-				"POST": "/biodata",
-				"PATCH": "/biodata/{id}",
-				"DELETE": "/biodata/{id}"
-			}
-		]
+		"command": [{
+			"GET1": "/example",
+			"GET2": "/biodata",
+			"GET3": "/biodata/{id}",
+			"POST": "/biodata",
+			"PATCH": "/biodata/{id}",
+			"DELETE": "/biodata/{id}"
+		}]
 	}`))
 }

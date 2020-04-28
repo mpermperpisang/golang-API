@@ -10,14 +10,12 @@ func Basic(w http.ResponseWriter, r *http.Request) {
 	{
 		"message": "basic example",
 		"owner": "mpermperpisang",
-		"command": [
-			{
-				"GET": "/get",
-				"POST": "/post",
-				"PUT": "/put",
-				"PATCH": "/patch",
-				"DELETE": "/delete"
-			}
-		]
+		"command": [{
+			"GET": "/get",
+			"POST": "/post",
+			"PUT": "/put",
+			"PATCH": "/patch",
+			"DELETE": "/delete"
+		}]
 	}`))
 }
