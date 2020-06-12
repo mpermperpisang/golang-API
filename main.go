@@ -30,6 +30,10 @@ func exampleEndpoint(r *mux.Router) error {
 }
 
 func biodataEndpoint(r *mux.Router) error {
+	// example
+	r.HandleFunc("/example/biodata/{id}", example.GetOneID).Methods(http.MethodGet)
+	r.Path("/example/biodata").Queries("id", "{id}").HandlerFunc(example.GetParamOneID).Methods(http.MethodGet)
+
 	// optional parameter
 	r.Path("/biodata").Queries("id", "{id}").HandlerFunc(biodata.GetParamOneBiodata).Methods(http.MethodGet)
 	r.Path("/biodata").Queries("id", "{id}").HandlerFunc(biodata.DeleteParamOneBiodata).Methods(http.MethodDelete)

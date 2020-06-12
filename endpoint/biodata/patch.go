@@ -35,12 +35,12 @@ func setPatchResponseBody(w http.ResponseWriter, r *http.Request, ID int) error 
 
 /*UpdateOneBiodata : update biodata user*/
 func UpdateOneBiodata(w http.ResponseWriter, r *http.Request) {
-	varID(r)
-	setPatchResponseBody(w, r, bioID)
+	VarID(r)
+	setPatchResponseBody(w, r, BioID)
 }
 
 /*UpdateParamOneBiodata : update biodata of spesific user using param ID*/
 func UpdateParamOneBiodata(w http.ResponseWriter, r *http.Request) {
-	varParamBioID(r)
-	setPatchResponseBody(w, r, paramBioID)
+	VarParamBioID(r)
+	setPatchResponseBody(w, r, ParamBioID)
 }

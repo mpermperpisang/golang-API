@@ -28,12 +28,12 @@ func GetAllBiodata(w http.ResponseWriter, r *http.Request) {
 
 /*GetOneBiodata : get biodata of specific user*/
 func GetOneBiodata(w http.ResponseWriter, r *http.Request) {
-	varID(r)
-	setGetResponseBody(w, bioID)
+	VarID(r)
+	setGetResponseBody(w, BioID)
 }
 
 /*GetParamOneBiodata : get biodata of spesific user using param ID*/
 func GetParamOneBiodata(w http.ResponseWriter, r *http.Request) {
-	varParamBioID(r)
-	setGetResponseBody(w, paramBioID)
+	VarParamBioID(r)
+	setGetResponseBody(w, ParamBioID)
 }

@@ -24,12 +24,12 @@ func setDeleteResponseBody(w http.ResponseWriter, ID int) error {
 
 /*DeleteOneBiodata : delete biodata user*/
 func DeleteOneBiodata(w http.ResponseWriter, r *http.Request) {
-	varID(r)
-	setDeleteResponseBody(w, bioID)
+	VarID(r)
+	setDeleteResponseBody(w, BioID)
 }
 
 /*DeleteParamOneBiodata : delete biodata of spesific user using param ID*/
 func DeleteParamOneBiodata(w http.ResponseWriter, r *http.Request) {
-	varParamBioID(r)
-	setDeleteResponseBody(w, paramBioID)
+	VarParamBioID(r)
+	setDeleteResponseBody(w, ParamBioID)
 }
