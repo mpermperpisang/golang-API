@@ -1,7 +1,6 @@
 package example
 
 import (
-	"fmt"
 	"net/http"
 	"strconv"
 
@@ -32,7 +31,6 @@ func GetOneID(w http.ResponseWriter, r *http.Request) {
 /*GetParamOneID : contoh API get with optional param ID*/
 func GetParamOneID(w http.ResponseWriter, r *http.Request) {
 	biodata.VarParamBioID(r)
-	fmt.Println(biodata.ParamBioID)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	w.Write([]byte(`{
